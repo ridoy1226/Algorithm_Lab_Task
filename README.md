@@ -10,8 +10,7 @@ Each problem is organized with:
 
 ---
 
-## 📂 Repository Structure
-Each problem is placed inside its own folder following a consistent structure:
+
 
 
 ## 📄 Additional Notes
