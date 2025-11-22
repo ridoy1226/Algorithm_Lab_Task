@@ -5,17 +5,17 @@ int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    int T = 1;  // Test set counter
+    int T = 1;  
     while (true) {
-        vector<vector<int>> g(21);  // 1..20
+        vector<vector<int>> g(21); 
         int x;
 
-        // Read first connection line
-        if (!(cin >> x)) return 0;   // EOF reached
+       
+        if (!(cin >> x)) return 0;  
 
-        // Read lines 1 to 19
+     
         for (int i = 1; i <= 19; i++) {
-            if (i != 1) cin >> x;   // For i==1 we already read x above
+            if (i != 1) cin >> x;  
             for (int j = 0; j < x; j++) {
                 int v;
                 cin >> v;
@@ -24,7 +24,6 @@ int main() {
             }
         }
 
-        // Read number of queries
         int N;
         cin >> N;
 
@@ -34,7 +33,7 @@ int main() {
             int A, B;
             cin >> A >> B;
 
-            // BFS
+         
             queue<int> q;
             vector<int> dist(21, -1);
             dist[A] = 0;
@@ -57,7 +56,7 @@ int main() {
                  << dist[B] << "\n";
         }
 
-        cout << "\n";  // Blank line between test sets
+        cout << "\n";  
     }
 
     return 0;
