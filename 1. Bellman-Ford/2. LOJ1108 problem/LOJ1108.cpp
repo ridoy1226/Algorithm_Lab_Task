@@ -33,7 +33,6 @@ int main() {
         for (int i = 0; i < q; ++i)
             cin >> queries[i];
 
-        // Bellman-Ford
         vector<int> dist(n + 1, INF);
         dist[1] = 0;
         for (int i = 1; i < n; ++i) {
@@ -45,7 +44,6 @@ int main() {
             }
         }
 
-        // Output after input
         cout << "Set #" << setCount++ << "\n";
         for (int target : queries) {
             if (target < 1 || target > n || dist[target] == INF || dist[target] < 3)
