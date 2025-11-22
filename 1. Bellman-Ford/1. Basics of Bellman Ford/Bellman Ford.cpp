@@ -6,7 +6,6 @@ void bellman_ford(vector<int>graph[], vector<int>cost[], int n, int source)
 
     int dis[n+1];
     int parent[n+1];
-    //memset(parent, -1, sizeof(parent));
     for (int i = 0; i <= n; i++) {
         parent[i] = -1;
         dis[i] = 10000;
@@ -14,12 +13,11 @@ void bellman_ford(vector<int>graph[], vector<int>cost[], int n, int source)
     dis[source] = 0;
 
     for (int k = 0; k < n-1; k++) {
-        for (int i = 1; i <= n; i++) {  // handle each node
+        for (int i = 1; i <= n; i++) {  
             int u = i;
             for (int j = 0; j < graph[u].size(); j++) {
                 int v = graph[u][j];
                 int w = cost[u][j];
-                // Relaxation
                 if (dis[u] + w < dis[v]) {
                     dis[v] = dis[u] + w;
                     parent[v] = u;
