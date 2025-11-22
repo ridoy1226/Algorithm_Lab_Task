@@ -1,17 +1,17 @@
-# ♞ Knight Moves (BFS in a 2D Grid) — Shortest Path for a Chess Knight
+#  Knight Moves (BFS in a 2D Grid) — Shortest Path for a Chess Knight
 
-## 🔍 Problem Overview
+##  Problem Overview
 
 This is a classic **shortest path** problem on a chessboard.  
 Given two squares **a** and **b** on an 8×8 board, the task is:
 
-### 👉 Find the **minimum number of knight moves** required to reach `b` from `a`.
+###  Find the **minimum number of knight moves** required to reach `b` from `a`.
 
 This problem can be modeled as a **shortest path search in an unweighted graph**.
 
 ---
 
-## 🎯 Graph Modeling
+## Graph Modeling
 
 | Concept | Meaning |
 |---------|---------|
@@ -21,11 +21,11 @@ This problem can be modeled as a **shortest path search in an unweighted graph**
 
 Since all edges have equal weight, the ideal algorithm is:
 
-## ✅ **Breadth-First Search (BFS)**
+##  **Breadth-First Search (BFS)**
 
 ---
 
-## 🧠 What is BFS?
+##  What is BFS?
 
 **Breadth-First Search (BFS)** is a graph traversal algorithm that explores nodes **level by level**.
 
@@ -38,11 +38,11 @@ This makes BFS perfect for the knight-moves problem.
 
 ---
 
-## 🎲 Representing the Board & Knight Moves
+##  Representing the Board & Knight Moves
 
 Before running BFS, we need to represent how a knight moves from one square to another.
 
-### ♘ The 8 Possible Knight Moves
+###  The 8 Possible Knight Moves
 
 From a position `(i, j)`, a knight may move to any of these 8 squares:
 (i-2, j+1)
@@ -61,7 +61,7 @@ From a position `(i, j)`, a knight may move to any of these 8 squares:
 
 
 
-### 💻 Implementation in Code
+###  Implementation in Code
 
 ```cpp
 // kr[] stores the possible row offsets for knight moves
@@ -74,7 +74,7 @@ FUNCTION bfs_knight(startR, startC, endR, endC):
 Looping i = 0 to 7,
 new_r = r + kr[i] and new_c = c + kc[i] gives all valid knight moves.
 
-⚙️ Why BFS Works Here
+ Why BFS Works Here
 
 BFS naturally explores moves in layers:
 
@@ -85,12 +85,12 @@ Layer 1: squares reachable in 1 move
 Layer 2: squares reachable in 2 moves
 The first time BFS reaches the target square, we are guaranteed that it took the minimum number of moves.
 
-🧩 Required Arrays
+ Required Arrays
 Name	Purpose
 dist[8][8]	Stores the minimum number of moves from start to each square
 color[8][8]	Tracks node states during BFS
 queue<pair<int,int>>	Holds squares to be processed
-🎨 Meaning of color values
+ Meaning of color values
 Value	Meaning
 -1	White — Unvisited
 1	Gray — Currently in queue
